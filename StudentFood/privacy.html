@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<title>プライバシーポリシー | StudentFood</title>
+<meta name="description" content="StudentFood（スチューデントフード）のプライバシーポリシーです。利用者情報の取り扱い、安全性、利用目的について説明します。">
+<style>
+:root {
+  --bg: #F8F9FA;
+  --card-bg: #FFFFFF;
+  --text: #1C1C1E;
+  --secondary: #636366;
+  --accent: #172D50;
+  --border: #E5E5EA;
+  --link: #007AFF;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #000000;
+    --card-bg: #1C1C1E;
+    --text: #FFFFFF;
+    --secondary: #8E8E93;
+    --accent: #5E9BFF;
+    --border: #2C2C2E;
+    --link: #0A84FF;
+  }
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  padding: 40px 20px;
+}
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+}
+header {
+  margin-bottom: 32px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+.brand {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--accent);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 12px;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+.meta {
+  font-size: 13px;
+  color: var(--secondary);
+}
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px 28px;
+  margin-bottom: 24px;
+}
+h2 {
+  font-size: 19px;
+  font-weight: 700;
+  margin-top: 8px;
+  margin-bottom: 12px;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 16px;
+  margin-bottom: 6px;
+  color: var(--accent);
+}
+p, ul {
+  font-size: 15px;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+ul {
+  padding-left: 20px;
+}
+li {
+  margin-bottom: 6px;
+}
+.highlight-box {
+  background: var(--bg);
+  border-left: 4px solid var(--accent);
+  padding: 12px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  margin: 12px 0;
+}
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+footer {
+  text-align: center;
+  font-size: 13px;
+  color: var(--secondary);
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <a href="./" class="brand">StudentFood.</a>
+    <h1>プライバシーポリシー</h1>
+    <div class="meta">最終更新日: 2026年11月11日 · 運営: StudentFood 運営（三摩 琉）</div>
+  </header>
+
+  <div class="card">
+    <p>StudentFood運営者（以下「当運営」）は、iOSアプリ「StudentFood」（以下「本アプリ」）における利用者情報の取り扱いについて、以下の通りプライバシーポリシーを定めます。</p>
+  </div>
+
+  <div class="card">
+    <h2>1. 取得する情報とその目的</h2>
+    <p>本アプリは「空きコマ90分。決め手3秒。」のコンセプトに基づき、必要最小限のデータのみを取り扱います。</p>
+
+    <h3>(1) 店舗検索に必要な情報</h3>
+    <ul>
+      <li><strong>位置情報（現在地）</strong>: 周辺飲食店を検索し、徒歩分数・距離を計算するためにのみ使用します。利用者の許可を得た場合のみ取得します。周辺検索や経路計算に必要な座標を、当運営の検索APIおよび外部の地図・店舗情報サービスへ送信して処理します。拒否された場合でも固定地点（大学・駅）から検索可能です。</li>
+      <li><strong>検索条件</strong>: 選択したモード、予算、徒歩時間などの条件は端末内に保存し、検索に必要な条件を当運営の検索APIや外部の店舗情報サービスへ送信します。</li>
+    </ul>
+
+    <h3>(2) 学生証パス・認証機能（App Functionality）</h3>
+    <ul>
+      <li><strong>大学メールアドレス（@kansaigaidai.jp 等）</strong>: 学生証パス発行時の大学ドメイン・メール所有確認およびワンタイム認証コード（OTP）送信に使用します。認証基盤では、メールアドレス、大学識別子、照合用コードハッシュ、有効期限、送信状態等を一時保存します。平文の認証コードは認証データベースに保存せず、不正送信抑制用のネットワーク識別子はハッシュ化します。認証情報は作成から24時間を経過すると定期削除の対象になり、実際の削除時刻は処理の実行状況により異なります。メール配信サービス側の記録には、各事業者の保存方針が適用されます。大学メールの所有確認は、大学による公式な在籍証明ではありません。</li>
+      <li><strong>氏名・大学名・会員番号・来店履歴</strong>: 学生証パスの氏名・大学名・会員番号・来店履歴は端末内に保存します。氏名・来店履歴を当運営のサーバーへ登録する処理はありません。認証のために大学識別子を送信し、会員番号は認証成功時にサーバーで採番します。</li>
+    </ul>
+
+    <p><strong>会員証QRの提示</strong>: パス裏面の会員証QRには、メールアドレス、会員番号、大学識別子、表示時刻が含まれます。QRを読み取った相手はこれらの情報を取得できます。提示先を確認してご利用ください。</p>
+
+    <h3>(3) 利用分析（Analytics / 任意・同意者のみ）</h3>
+    <p>設定画面で「匿名の利用データを共有」に同意いただいた場合のみ、品質向上のために以下の利用情報を収集します。ランダムなIDにより、同じ端末からの操作を区別できます。</p>
+    <ul>
+      <li>ランダム生成された匿名インストールID、アプリ/OSバージョン</li>
+      <li>選択モード、約1km単位に丸められた地域情報（精密座標ではありません）</li>
+      <li>店舗候補の表示・操作ログ、検索時間、エラー情報</li>
+    </ul>
+    <div class="highlight-box">
+      ※ 氏名、大学メールアドレス、Apple ID、学籍番号、広告識別子（IDFA）、正確なGPS座標が分析データに含まれることは一切ありません。
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>2. 利用者によるデータの管理・削除権利</h2>
+    <p>設定画面から、端末内の学生証パスとサーバーの利用分析データをそれぞれ管理できます。各操作の削除対象は以下のとおりです。</p>
+    <ul>
+      <li><strong>学生証パスの完全削除</strong>: 本アプリの設定画面内「学生証パスと登録データの削除」より、端末内の氏名・メールアドレス・会員番号・来店履歴を即座に完全消去できます。</li>
+      <li><strong>サーバー送信データの削除</strong>: 設定画面内「サーバーの利用データ・送信記録を削除」より、サーバーに送信された匿名分析データの削除をいつでも要求・実行できます。</li>
+      <li><strong>同意の変更</strong>: 設定画面のトグルより、いつでも分析データ共有のオン/オフを切り替え可能です。既に送信した分析データの削除は、上記のサーバーデータ削除を別途実行してください。</li>
+    </ul>
+    <p>端末内のパス削除は、認証基盤やメール配信サービス側の記録を一括削除する操作ではありません。これらについてのお問い合わせは下記窓口へご連絡ください。</p>
+  </div>
+
+  <div class="card">
+    <h2>3. 広告トラッキングおよび第三者提供について</h2>
+    <ul>
+      <li><strong>広告トラッキングを行いません</strong>: 他社のアプリやWebサイトを横断して利用者を追跡する広告識別子（IDFA / ATT）は一切取得・使用しません。</li>
+      <li><strong>第三者へのデータ販売・提供の禁止</strong>: 法令に基づく場合を除き、利用者のデータを広告目的や営利目的で第三者へ販売・提供・譲渡することはありません。</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>4. 外部サービス</h2>
+    <p>本アプリは機能提供のために以下の事業者サービスを利用しています。</p>
+    <ul>
+      <li><strong>Apple Maps (MapKit)</strong>: 地図・経路表示および徒歩分数の計算</li>
+      <li><strong>ホットペッパーグルメ Webサービス (リクルート)</strong>: 周辺飲食店の店舗情報取得</li>
+      <li><strong>Supabase</strong>: 店舗カタログ・検索API・利用分析データ・一時的な認証基盤</li>
+      <li><strong>Google Apps Script / メール配信</strong>: 大学メールアドレスへの認証コード送信処理</li>
+      <li><strong>GitHub Pages</strong>: 本ポリシー・サポートページの配信。GitHubは安全性確保のため、Webページ訪問者のIPアドレスを記録します。</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>5. お問い合わせ窓口</h2>
+    <p>本ポリシーに関するご質問やデータに関するお問い合わせは、下記窓口までご連絡ください。</p>
+    <ul>
+      <li><strong>サービス名</strong>: StudentFood</li>
+      <li><strong>運営者</strong>: StudentFood 運営（代表: 三摩 琉）</li>
+      <li><strong>メールアドレス</strong>: <a href="mailto:studentfood3s@gmail.com">studentfood3s@gmail.com</a></li>
+      <li><strong>サポートページ</strong>: <a href="./support.html">サポート ＆ よくある質問</a></li>
+    </ul>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 StudentFood. All rights reserved.</p>
+  </footer>
+</div>
+</body>
+</html>

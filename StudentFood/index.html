@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<title>StudentFood | 空きコマ90分。決め手3秒。</title>
+<meta name="description" content="大学生のための超高速食事決定アプリ StudentFood。目的別に最高な3店舗だけをおすすめします。">
+<style>
+:root {
+  --bg: #F8F9FA;
+  --card-bg: #FFFFFF;
+  --text: #1C1C1E;
+  --secondary: #636366;
+  --accent: #172D50;
+  --border: #E5E5EA;
+  --link: #007AFF;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #000000;
+    --card-bg: #1C1C1E;
+    --text: #FFFFFF;
+    --secondary: #8E8E93;
+    --accent: #5E9BFF;
+    --border: #2C2C2E;
+    --link: #0A84FF;
+  }
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  padding: 40px 20px;
+}
+.container {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+}
+header {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.brand {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--accent);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+h1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 16px;
+  margin-bottom: 12px;
+}
+.tagline {
+  font-size: 16px;
+  color: var(--secondary);
+  margin-bottom: 32px;
+}
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px 28px;
+  margin-bottom: 24px;
+  text-align: left;
+}
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+.link-button {
+  display: block;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  padding: 14px 20px;
+  border-radius: 12px;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.link-button:hover {
+  background: var(--border);
+}
+footer {
+  text-align: center;
+  font-size: 13px;
+  color: var(--secondary);
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <a href="./" class="brand">StudentFood.</a>
+    <h1>空きコマ90分。決め手3秒。</h1>
+    <p class="tagline">大学生のための食事決定アプリ</p>
+  </header>
+
+  <div class="card">
+    <h2 style="font-size: 18px; margin-bottom: 12px;">公式公開情報</h2>
+    <p style="font-size: 14px; color: var(--secondary); margin-bottom: 16px;">
+      StudentFood のプライバシーポリシーおよびサポート情報をご案内します。
+    </p>
+    <div class="links">
+      <a href="./privacy.html" class="link-button">
+        📄 プライバシーポリシー ↗
+      </a>
+      <a href="./support.html" class="link-button">
+        💬 サポート ＆ よくある質問（FAQ） ↗
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 StudentFood. All rights reserved.</p>
+  </footer>
+</div>
+</body>
+</html>
