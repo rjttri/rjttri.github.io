@@ -6,136 +6,116 @@
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
 <title>プライバシーポリシー | StudentFood</title>
-<meta name="description" content="StudentFood（スチューデントフード）のプライバシーポリシーです。利用者情報の取り扱い、安全性、利用目的について説明します。">
+<meta name="description" content="StudentFoodの利用者情報の取り扱いと、データの管理・削除についてご案内します。">
 <style>
 :root {
-  --bg: #F8F9FA;
-  --card-bg: #FFFFFF;
-  --text: #1C1C1E;
-  --secondary: #636366;
-  --accent: #172D50;
-  --border: #E5E5EA;
-  --link: #007AFF;
+  color-scheme: light dark;
+  --bg: #F4F6F5; --card-bg: #FFFFFF; --text: #0E1A14;
+  --secondary: #526358; --accent: #0E291C; --gold: #C5A059;
+  --gold-soft: #F5EEDf; --gold-ink: #725622; --logo: #172D50;
+  --border: rgba(14,41,28,.11); --surface-glass: rgba(244,246,245,.88);
+  --shadow: 0 12px 36px -4px rgba(14,41,28,.06), 0 2px 6px rgba(14,41,28,.025);
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #000000;
-    --card-bg: #1C1C1E;
-    --text: #FFFFFF;
-    --secondary: #8E8E93;
-    --accent: #5E9BFF;
-    --border: #2C2C2E;
-    --link: #0A84FF;
+    --bg: #070D0A; --card-bg: #0F1A13; --text: #F0F4F1;
+    --secondary: #ABB9B0; --accent: #DFB76C; --gold: #DFB76C;
+    --gold-soft: #30291B; --gold-ink: #DFB76C; --logo: #F0F4F1;
+    --border: rgba(240,244,241,.14); --surface-glass: rgba(7,13,10,.88);
+    --shadow: 0 12px 36px -4px rgba(0,0,0,.24), 0 2px 6px rgba(0,0,0,.12);
   }
 }
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  background-color: var(--bg);
-  color: var(--text);
-  line-height: 1.65;
-  padding: 40px 20px;
+* { box-sizing: border-box; }
+html { scroll-padding-top: 150px; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif; font-size: 15px; line-height: 1.9; -webkit-font-smoothing: antialiased; overflow-wrap: anywhere; }
+a { color: var(--accent); text-underline-offset: 4px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible { outline: 3px solid var(--gold); outline-offset: 5px; }
+.skip-link { position: absolute; top: -100px; left: 16px; z-index: 30; padding: 10px 20px; border-radius: 999px; background: var(--card-bg); }
+.skip-link:focus { top: 12px; }
+.site-header { position: sticky; top: 0; z-index: 10; background: var(--surface-glass); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+.header-inner { max-width: 1088px; margin: 0 auto; padding: 20px 32px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.brand { display: inline-flex; align-items: center; min-height: 44px; color: var(--logo); flex-shrink: 0; }
+.brand-mark { display: block; width: 120px; height: 40px; }
+nav { display: flex; align-items: center; gap: 4px; }
+nav a { display: flex; align-items: center; justify-content: center; min-height: 44px; padding: 8px 18px; border-radius: 999px; color: var(--secondary); font-size: 13px; font-weight: 600; text-decoration: none; white-space: nowrap; }
+nav a:hover { background: var(--card-bg); }
+nav a[aria-current="page"] { color: var(--gold-ink); background: var(--gold-soft); }
+main { width: min(100% - 64px, 820px); margin: 0 auto; padding: 60px 0 32px; }
+main.home { width: min(100% - 64px, 1024px); }
+.page-heading { margin-bottom: 40px; }
+.eyebrow { margin: 0 0 12px; color: var(--secondary); font-size: 11px; font-weight: 700; letter-spacing: .16em; }
+h1 { margin: 0 0 16px; font-size: clamp(28px, 4.5vw, 42px); font-weight: 700; line-height: 1.4; letter-spacing: -.035em; text-wrap: balance; }
+.lead, .meta { color: var(--secondary); }
+.lead { margin: 0; font-size: 16px; }
+.meta { font-size: 12px; margin: 0; }
+.card { margin: 0 0 20px; padding: 28px 32px; background: var(--card-bg); border-radius: 20px; box-shadow: var(--shadow); }
+h2 { margin: 0 0 18px; font-size: 20px; line-height: 1.55; letter-spacing: -.025em; }
+h3 { margin: 28px 0 12px; font-size: 16px; line-height: 1.65; }
+p { margin: 0 0 16px; }
+p:last-child { margin-bottom: 0; }
+ul { margin: 12px 0 20px; padding-left: 1.3em; }
+li { padding-left: 3px; margin-bottom: 12px; }
+li::marker { color: var(--secondary); }
+strong { font-weight: 650; }
+.highlight-box { margin: 24px 0 0; padding: 20px; background: var(--bg); border-left: 2px solid var(--gold); border-radius: 0 12px 12px 0; font-size: 14px; }
+.section-label { display: block; margin-bottom: 12px; font-size: 11px; font-weight: 700; letter-spacing: .14em; color: var(--gold-ink); }
+.mail-button { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 18px; padding: 12px 22px; margin-top: 8px; border-radius: 999px; background: #0E291C; color: #FFFFFF; font-size: 14px; font-weight: 600; text-decoration: none; }
+.mail-button:hover { background: #1D412E; }
+.faq-list { display: grid; gap: 16px; }
+.faq-card { margin: 0; }
+.faq-q { display: flex; align-items: flex-start; gap: 16px; margin: 0 0 16px; font-size: 17px; font-weight: 650; line-height: 1.65; }
+.q-badge { display: flex; flex: 0 0 32px; width: 32px; height: 32px; align-items: center; justify-content: center; color: var(--gold-ink); background: var(--gold-soft); border-radius: 50%; font-size: 14px; font-weight: 700; }
+.faq-a { margin-left: 48px; color: var(--secondary); }
+.contact-section { margin-top: 40px; }
+.contact-section .note { color: var(--secondary); font-size: 13px; }
+.home-hero { padding: 56px; border-radius: 20px; background: #0E291C; color: #FFFFFF; box-shadow: var(--shadow); }
+.promise { display: inline-block; margin: 0 0 32px; padding: 7px 14px; border: .5px solid rgba(197,160,89,.55); border-radius: 999px; font-size: 12px; color: #E8CD99; }
+.home-hero h1 { font-size: clamp(32px, 5vw, 54px); max-width: 700px; line-height: 1.35; }
+.home-hero .lead { color: #CDD9D1; margin-top: 20px; }
+.portal-heading { margin: 48px 0 20px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px 32px; justify-content: space-between; }
+.portal-heading h2 { margin: 0; }
+.portal-heading p { margin: 0; color: var(--secondary); font-size: 13px; }
+.portal-links { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.portal-link { display: block; position: relative; padding-right: 60px; text-decoration: none; color: var(--text); }
+.portal-link .arrow { position: absolute; right: 28px; top: 28px; color: var(--gold-ink); font-size: 22px; }
+.portal-link h3 { font-size: 21px; margin: 16px 0 10px; }
+.portal-link p { color: var(--secondary); font-size: 14px; }
+.portal-link:hover { box-shadow: 0 16px 38px -4px rgba(14,41,28,.12); }
+.site-footer { width: min(100% - 64px, 1024px); margin: 24px auto 0; padding: 24px 0 36px; border-top: .5px solid var(--border); color: var(--secondary); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; font-size: 11px; }
+.site-footer p { margin: 0; }
+@media (max-width: 600px) {
+  .header-inner { padding: 16px 20px 12px; flex-direction: column; align-items: flex-start; gap: 12px; }
+  .brand-mark { width: 108px; height: 36px; }
+  nav { width: 100%; justify-content: space-between; }
+  nav a { padding: 8px 16px; }
+  main, main.home { width: calc(100% - 40px); padding-top: 36px; }
+  .page-heading { margin-bottom: 28px; }
+  .card { padding: 24px; }
+  .home-hero { padding: 32px 26px; }
+  .portal-heading { margin-top: 36px; }
+  .portal-links { grid-template-columns: 1fr; gap: 0; }
+  .faq-q { gap: 12px; font-size: 16px; }
+  .faq-a { margin-left: 0; }
+  .site-footer { width: calc(100% - 40px); }
 }
-.container {
-  max-width: 760px;
-  margin: 0 auto;
+@media (prefers-color-scheme: dark) {
+  .mail-button { background: #DFB76C; color: #0E291C; }
+  .mail-button:hover { background: #E8CD99; }
+  .home-hero { border: .5px solid rgba(223,183,108,.25); }
 }
-header {
-  margin-bottom: 32px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--border);
-}
-.brand {
-  font-size: 20px;
-  font-weight: 800;
-  color: var(--accent);
-  text-decoration: none;
-  letter-spacing: -0.5px;
-}
-h1 {
-  font-size: 28px;
-  font-weight: 700;
-  margin-top: 12px;
-  margin-bottom: 8px;
-  letter-spacing: -0.5px;
-}
-.meta {
-  font-size: 13px;
-  color: var(--secondary);
-}
-.card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 24px 28px;
-  margin-bottom: 24px;
-}
-h2 {
-  font-size: 19px;
-  font-weight: 700;
-  margin-top: 8px;
-  margin-bottom: 12px;
-  color: var(--text);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-h3 {
-  font-size: 15px;
-  font-weight: 600;
-  margin-top: 16px;
-  margin-bottom: 6px;
-  color: var(--accent);
-}
-p, ul {
-  font-size: 15px;
-  color: var(--text);
-  margin-bottom: 12px;
-}
-ul {
-  padding-left: 20px;
-}
-li {
-  margin-bottom: 6px;
-}
-.highlight-box {
-  background: var(--bg);
-  border-left: 4px solid var(--accent);
-  padding: 12px 16px;
-  border-radius: 4px;
-  font-size: 14px;
-  margin: 12px 0;
-}
-a {
-  color: var(--link);
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-footer {
-  text-align: center;
-  font-size: 13px;
-  color: var(--secondary);
-  margin-top: 40px;
-  padding-top: 20px;
-  border-top: 1px solid var(--border);
-}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
-<div class="container">
-  <header>
-    <a href="./" class="brand">StudentFood.</a>
-    <h1>プライバシーポリシー</h1>
-    <div class="meta">最終更新日: 2026年11月11日 · 運営: StudentFood 運営（三摩 琉）</div>
-  </header>
+<a class="skip-link" href="#main">本文へ移動</a><header class="site-header"><div class="header-inner"><a class="brand" href="./" aria-label="StudentFood トップ"><svg class="brand-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 288 96" width="120" height="40" aria-hidden="true" focusable="false"><path fill="currentColor" fill-rule="evenodd" d="M 12.764 0.066 L 9.719 0.681 L 8.704 1.035 L 6.675 2.028 L 4.307 3.720 L 2.277 5.960 L 1.493 7.230 L 0.845 8.583 L 0.174 11.290 L 0.031 12.981 L 0.059 14.334 L 0.494 17.040 L 0.870 18.393 L 1.515 19.747 L 2.277 20.984 L 3.768 22.791 L 5.322 24.243 L 7.689 25.899 L 10.057 27.260 L 13.778 29.088 L 18.176 31.488 L 20.206 32.810 L 21.559 34.098 L 22.963 35.984 L 23.739 38.013 L 24.023 40.043 L 23.688 42.411 L 22.912 44.433 L 22.337 45.455 L 21.480 46.470 L 20.206 47.564 L 18.853 48.321 L 17.161 48.902 L 15.470 49.108 L 13.440 48.964 L 11.770 48.500 L 9.748 47.485 L 8.377 46.470 L 6.675 44.694 L 5.482 43.087 L 4.132 40.720 L 3.176 38.690 L 2.170 35.984 L 1.420 32.939 L 1.156 32.601 L 0.586 32.516 L 0.247 32.667 L 0.105 32.939 L 0.094 37.337 L 0.101 49.176 L 0.247 49.478 L 0.586 49.585 L 1.262 49.356 L 1.857 48.162 L 2.615 47.234 L 3.292 46.888 L 3.968 46.760 L 4.983 47.023 L 7.689 48.591 L 10.057 49.641 L 10.734 49.890 L 12.764 50.310 L 14.793 50.482 L 17.499 50.373 L 19.867 49.942 L 20.882 49.609 L 23.250 48.539 L 24.265 47.941 L 25.839 46.808 L 27.302 45.455 L 28.703 43.764 L 29.784 42.073 L 30.746 40.043 L 31.130 38.690 L 31.431 37.337 L 31.571 35.984 L 31.457 32.263 L 30.733 29.556 L 30.047 28.203 L 28.683 26.174 L 26.971 24.344 L 23.588 21.931 L 20.206 20.025 L 13.102 16.501 L 11.411 15.506 L 9.816 14.334 L 8.478 12.981 L 7.814 11.966 L 7.264 10.613 L 6.958 8.922 L 7.167 6.892 L 7.583 5.539 L 8.366 4.248 L 8.959 3.509 L 10.396 2.408 L 12.087 1.671 L 13.102 1.404 L 14.117 1.313 L 16.485 1.418 L 18.514 2.029 L 19.867 2.721 L 21.220 3.668 L 22.736 5.201 L 23.746 6.554 L 24.623 7.907 L 25.979 10.613 L 27.415 14.334 L 27.836 16.025 L 28.059 16.364 L 28.324 16.468 L 28.663 16.415 L 29.104 16.025 L 29.102 1.818 L 28.663 1.522 L 27.986 1.659 L 26.908 3.171 L 26.295 3.580 L 25.618 3.691 L 24.941 3.551 L 24.265 3.205 L 22.574 2.102 L 21.220 1.429 L 18.176 0.372 L 15.808 -0.000 Z     M 123.379 1.675 L 122.878 2.156 L 122.857 2.495 L 122.926 2.833 L 123.379 3.149 L 127.777 3.189 L 128.063 3.509 L 128.049 47.485 L 127.982 47.823 L 127.777 47.961 L 123.379 47.956 L 122.962 48.162 L 122.847 48.838 L 122.968 49.176 L 123.379 49.355 L 140.293 49.344 L 143.676 49.215 L 147.397 48.624 L 148.750 48.240 L 152.471 46.611 L 155.177 44.830 L 156.868 43.367 L 158.644 41.396 L 160.068 39.366 L 161.693 36.322 L 162.706 33.277 L 163.042 31.924 L 163.728 27.189 L 163.797 24.482 L 163.689 22.791 L 163.362 20.085 L 162.700 17.040 L 161.687 13.996 L 160.022 10.951 L 158.595 8.922 L 157.726 7.907 L 156.192 6.480 L 154.839 5.477 L 153.147 4.430 L 151.794 3.754 L 150.103 3.110 L 146.382 2.127 L 141.646 1.675 Z     M 168.370 1.760 L 168.130 2.156 L 168.175 2.833 L 168.708 3.164 L 172.767 3.197 L 173.155 3.509 L 173.138 47.485 L 173.021 47.823 L 172.767 47.945 L 168.370 48.005 L 168.195 48.162 L 168.094 48.500 L 168.197 49.176 L 168.370 49.316 L 168.708 49.354 L 201.521 49.347 L 201.859 49.263 L 201.998 48.838 L 202.328 43.764 L 202.765 34.969 L 202.762 34.631 L 202.536 34.379 L 202.197 34.291 L 201.859 34.330 L 201.640 34.631 L 200.294 39.366 L 198.916 42.411 L 197.212 44.779 L 196.447 45.535 L 195.432 46.290 L 194.417 46.917 L 193.402 47.315 L 192.387 47.625 L 190.696 47.866 L 183.254 47.937 L 183.070 47.823 L 182.969 47.485 L 183.000 24.821 L 183.254 24.551 L 185.284 24.566 L 186.298 24.704 L 187.651 25.311 L 188.682 26.174 L 189.681 27.690 L 190.097 28.542 L 190.775 30.571 L 191.365 33.954 L 191.711 34.278 L 192.049 34.254 L 192.415 33.954 L 192.449 28.542 L 192.413 14.334 L 192.403 13.996 L 192.049 13.758 L 191.711 13.748 L 191.321 13.996 L 190.831 17.379 L 190.445 18.732 L 189.731 20.423 L 188.666 21.844 L 187.651 22.545 L 186.975 22.851 L 186.298 22.993 L 183.254 23.150 L 182.942 22.791 L 182.988 3.509 L 183.254 3.164 L 190.696 3.172 L 192.726 3.460 L 194.079 4.089 L 195.432 5.163 L 196.129 5.877 L 197.477 7.907 L 198.902 11.628 L 199.246 12.981 L 199.556 15.011 L 199.829 15.420 L 200.168 15.423 L 200.506 15.329 L 200.703 15.011 L 200.477 1.818 L 200.168 1.641 L 170.738 1.645 L 168.708 1.654 Z     M 206.933 1.667 L 206.553 2.156 L 206.549 2.495 L 206.630 2.833 L 206.933 3.145 L 209.978 3.148 L 210.316 3.236 L 212.447 6.554 L 213.127 7.907 L 213.149 37.675 L 213.096 42.411 L 212.706 47.147 L 212.345 47.636 L 210.992 47.906 L 206.933 48.034 L 206.666 48.500 L 206.764 49.176 L 206.933 49.322 L 207.271 49.357 L 220.802 49.342 L 221.099 49.176 L 221.295 48.838 L 221.303 48.500 L 221.141 48.191 L 220.802 47.987 L 216.743 47.940 L 215.728 47.674 L 215.552 47.485 L 215.287 46.470 L 214.990 43.764 L 214.896 41.058 L 214.882 11.966 L 214.887 11.628 L 215.052 11.308 L 218.773 17.069 L 224.755 26.850 L 229.048 33.616 L 238.527 49.176 L 238.731 49.426 L 239.069 49.572 L 242.452 49.427 L 242.622 49.176 L 242.583 9.937 L 242.751 5.201 L 243.003 3.848 L 243.192 3.509 L 243.467 3.311 L 247.864 3.178 L 248.203 3.080 L 248.431 2.833 L 248.492 2.495 L 248.476 2.156 L 248.293 1.818 L 247.864 1.658 L 235.010 1.666 L 234.751 1.818 L 234.522 2.156 L 234.579 2.833 L 235.010 3.170 L 239.746 3.270 L 240.126 3.509 L 240.463 4.862 L 240.671 7.907 L 240.685 24.144 L 240.662 31.924 L 240.634 32.263 L 240.422 32.547 L 221.609 1.818 L 221.141 1.655 Z     M 253.277 1.638 L 252.957 1.818 L 252.857 2.156 L 251.691 15.687 L 251.766 16.025 L 251.924 16.164 L 252.600 16.294 L 252.938 16.189 L 253.061 16.025 L 253.860 13.319 L 255.214 9.937 L 256.522 7.569 L 258.013 5.730 L 259.704 4.402 L 261.057 3.717 L 262.748 3.348 L 264.778 3.303 L 264.960 3.509 L 264.918 47.823 L 264.778 47.953 L 264.440 47.969 L 259.366 47.971 L 258.957 48.162 L 258.848 48.838 L 258.979 49.176 L 259.366 49.351 L 281.015 49.357 L 281.327 49.176 L 281.491 48.838 L 281.499 48.500 L 281.313 48.162 L 281.015 47.990 L 275.265 47.953 L 274.965 47.823 L 274.852 47.485 L 274.851 3.509 L 275.265 3.210 L 276.956 3.238 L 278.309 3.423 L 280.000 4.144 L 281.692 5.408 L 283.197 7.230 L 284.546 9.598 L 285.863 12.643 L 286.814 15.687 L 287.104 16.016 L 287.781 15.884 L 287.953 15.687 L 287.969 15.349 L 287.196 1.818 L 286.766 1.639 Z     M 37.796 2.065 L 36.798 15.687 L 36.864 16.025 L 37.119 16.218 L 37.458 16.278 L 37.796 16.308 L 38.136 16.025 L 38.394 15.011 L 39.783 11.290 L 40.808 9.260 L 41.830 7.569 L 43.208 5.947 L 44.223 5.133 L 46.253 4.080 L 47.606 3.709 L 48.621 3.610 L 49.636 3.574 L 50.010 3.848 L 50.033 47.485 L 49.975 47.823 L 49.636 47.984 L 44.223 47.999 L 43.805 48.500 L 43.779 48.838 L 43.917 49.176 L 44.223 49.359 L 44.561 49.367 L 66.211 49.333 L 66.581 48.838 L 66.592 48.500 L 66.433 48.162 L 66.211 47.991 L 60.460 47.975 L 60.046 47.823 L 59.996 47.485 L 59.982 3.848 L 60.122 3.544 L 60.460 3.445 L 62.152 3.505 L 63.505 3.770 L 65.144 4.524 L 66.549 5.480 L 67.226 6.119 L 68.637 7.907 L 69.594 9.605 L 71.067 12.981 L 71.949 15.687 L 72.300 16.108 L 72.976 15.859 L 73.104 15.687 L 73.112 15.349 L 72.357 2.156 L 71.962 1.904 L 69.594 1.891 L 38.134 1.857 Z     M 77.374 2.148 L 77.294 2.833 L 77.491 3.171 L 77.712 3.307 L 82.110 3.311 L 82.499 3.509 L 82.513 31.586 L 82.639 36.998 L 82.970 39.366 L 83.313 40.720 L 84.005 42.411 L 85.420 44.779 L 87.352 46.808 L 89.552 48.261 L 91.920 49.239 L 94.964 49.985 L 98.685 50.276 L 100.377 50.253 L 103.421 49.967 L 105.789 49.330 L 107.744 48.500 L 108.834 47.898 L 110.187 46.860 L 111.562 45.455 L 112.712 43.764 L 113.394 42.411 L 114.009 40.720 L 114.368 39.366 L 114.642 37.675 L 114.796 35.307 L 114.799 7.907 L 114.915 5.539 L 115.144 3.848 L 115.599 3.391 L 119.997 3.260 L 120.386 2.833 L 120.339 2.156 L 119.997 1.939 L 119.658 1.932 L 107.480 1.905 L 107.142 1.984 L 106.968 2.156 L 106.917 2.833 L 107.142 3.239 L 112.216 3.429 L 112.520 3.848 L 112.682 4.524 L 112.938 6.554 L 113.030 11.290 L 113.020 35.645 L 112.910 36.998 L 112.612 39.028 L 111.650 42.073 L 110.187 44.422 L 109.289 45.455 L 107.819 46.573 L 105.789 47.514 L 104.436 47.925 L 101.730 48.206 L 99.362 47.934 L 98.347 47.607 L 96.317 46.558 L 94.964 45.315 L 93.926 43.764 L 93.557 42.749 L 92.834 40.043 L 92.495 37.675 L 92.409 34.969 L 92.433 3.509 L 92.596 3.355 L 92.935 3.335 L 97.332 3.256 L 97.631 2.833 L 97.583 2.156 L 97.332 1.942 L 96.994 1.928 L 78.051 1.898 L 77.712 1.898 Z     M 139.955 3.170 L 138.263 3.179 L 137.957 3.509 L 137.921 47.485 L 138.007 47.823 L 138.263 47.963 L 141.984 47.921 L 144.352 47.527 L 146.044 46.880 L 147.059 46.236 L 148.073 45.423 L 148.869 44.441 L 149.540 43.426 L 150.547 41.396 L 151.513 38.352 L 152.508 33.277 L 152.827 28.542 L 152.885 23.468 L 152.549 17.717 L 151.536 12.304 L 150.815 9.937 L 150.236 8.583 L 149.524 7.230 L 148.502 5.877 L 147.735 5.143 L 146.044 4.046 L 145.029 3.615 L 144.014 3.354 L 141.984 3.164 Z     M 117.629 66.427 L 116.614 66.658 L 114.922 67.364 L 113.569 68.043 L 112.555 68.783 L 110.525 70.704 L 108.979 72.856 L 107.795 75.224 L 107.427 76.238 L 107.044 77.930 L 106.762 80.974 L 107.045 84.357 L 107.681 86.725 L 109.143 89.769 L 110.525 91.586 L 112.216 93.156 L 114.260 94.505 L 115.261 94.974 L 116.952 95.549 L 119.320 96.000 L 121.350 95.967 L 123.041 95.600 L 124.732 94.990 L 126.762 93.868 L 128.895 92.137 L 130.620 90.108 L 131.638 88.416 L 132.644 86.048 L 132.938 85.033 L 133.323 82.666 L 133.308 78.945 L 132.934 76.915 L 132.620 75.900 L 131.964 74.209 L 131.272 72.856 L 129.498 70.488 L 127.439 68.648 L 125.409 67.403 L 123.718 66.701 L 122.365 66.356 L 119.997 66.121 Z     M 158.898 66.421 L 157.207 66.904 L 154.839 68.042 L 154.242 68.458 L 152.809 69.647 L 151.327 71.164 L 149.982 73.194 L 149.015 75.224 L 148.336 77.591 L 148.029 80.636 L 148.037 81.989 L 148.239 84.019 L 148.711 86.048 L 150.001 89.093 L 151.396 91.122 L 153.486 93.191 L 155.854 94.659 L 158.222 95.587 L 160.251 95.966 L 162.619 95.922 L 164.987 95.350 L 166.002 94.992 L 167.355 94.279 L 168.370 93.608 L 170.061 92.186 L 171.574 90.446 L 172.478 89.093 L 173.292 87.401 L 174.175 84.695 L 174.607 81.651 L 174.500 78.945 L 174.218 77.253 L 173.850 75.900 L 172.893 73.532 L 171.414 71.212 L 170.399 70.054 L 168.987 68.796 L 168.032 68.115 L 166.678 67.386 L 164.987 66.707 L 163.634 66.351 L 161.266 66.114 Z     M 70.609 66.744 L 70.282 67.105 L 70.370 67.443 L 70.609 67.615 L 73.315 67.580 L 73.653 67.630 L 73.778 67.781 L 73.807 94.167 L 73.653 94.403 L 73.315 94.467 L 70.609 94.436 L 70.207 94.843 L 70.609 95.284 L 83.801 95.236 L 84.149 94.843 L 83.801 94.447 L 80.418 94.458 L 80.080 94.427 L 79.890 94.167 L 79.938 80.974 L 80.080 80.835 L 80.418 80.814 L 82.448 80.835 L 83.801 81.170 L 84.478 81.553 L 85.340 82.666 L 85.853 83.680 L 86.273 85.033 L 86.480 86.725 L 86.846 86.918 L 87.184 86.869 L 87.320 86.725 L 87.351 86.387 L 87.341 74.209 L 87.184 74.029 L 86.846 73.986 L 86.431 74.209 L 86.260 75.900 L 85.958 76.915 L 85.221 78.268 L 84.478 79.021 L 83.801 79.405 L 82.786 79.765 L 80.080 79.818 L 79.915 79.621 L 79.894 79.283 L 79.921 67.781 L 80.080 67.620 L 80.418 67.609 L 86.169 67.612 L 88.199 67.983 L 89.214 68.428 L 90.886 69.811 L 91.620 70.826 L 92.343 72.179 L 93.191 75.224 L 93.611 75.397 L 93.823 75.224 L 93.921 74.885 L 93.825 67.105 L 93.611 66.752 L 93.273 66.744 Z     M 119.997 66.763 L 118.643 66.956 L 117.290 67.560 L 116.490 68.120 L 115.237 69.811 L 114.504 71.502 L 113.785 74.547 L 113.533 76.577 L 113.378 80.974 L 113.479 85.372 L 113.757 87.401 L 114.246 89.756 L 115.157 92.137 L 116.065 93.490 L 117.290 94.608 L 117.967 94.957 L 119.997 95.318 L 121.011 95.247 L 122.026 94.998 L 123.021 94.505 L 123.718 93.955 L 124.441 93.152 L 125.195 91.799 L 126.144 89.093 L 126.491 87.401 L 126.831 84.695 L 126.931 80.974 L 126.813 77.253 L 126.450 74.547 L 125.812 71.841 L 125.115 70.149 L 124.522 69.135 L 123.741 68.120 L 123.041 67.602 L 121.688 67.003 Z     M 190.019 66.765 L 189.005 66.776 L 188.662 67.105 L 188.757 67.443 L 189.005 67.609 L 191.711 67.566 L 192.131 67.781 L 192.129 94.167 L 191.711 94.457 L 189.005 94.472 L 188.636 94.843 L 188.831 95.182 L 189.005 95.283 L 201.182 95.270 L 204.565 94.974 L 206.257 94.555 L 207.948 93.870 L 209.301 93.189 L 210.833 92.137 L 212.754 90.108 L 213.844 88.416 L 214.507 87.063 L 215.139 85.372 L 215.486 84.019 L 215.832 81.312 L 215.718 78.945 L 215.459 77.253 L 215.091 75.900 L 214.057 73.532 L 212.393 71.164 L 210.958 69.811 L 209.301 68.699 L 207.948 68.029 L 206.933 67.671 L 204.565 67.085 L 202.874 66.864 L 200.844 66.773 Z     M 159.575 67.040 L 158.222 67.717 L 157.102 68.796 L 156.146 70.488 L 155.450 72.517 L 155.068 74.209 L 154.720 76.915 L 154.590 80.974 L 154.695 85.033 L 155.138 88.078 L 155.697 90.446 L 156.404 92.137 L 157.207 93.399 L 158.222 94.335 L 159.236 94.926 L 160.928 95.272 L 161.943 95.262 L 163.593 94.843 L 164.647 94.167 L 165.325 93.530 L 166.398 91.799 L 167.035 90.108 L 167.442 88.416 L 167.788 86.048 L 168.064 82.666 L 168.089 79.621 L 167.930 76.915 L 167.487 73.532 L 167.085 71.841 L 166.406 70.149 L 165.325 68.482 L 164.987 68.091 L 163.972 67.367 L 162.957 66.979 L 161.266 66.800 Z     M 198.476 67.551 L 198.223 67.781 L 198.209 68.120 L 198.200 94.167 L 198.476 94.495 L 200.844 94.504 L 202.197 94.366 L 202.874 94.244 L 204.565 93.592 L 205.580 92.897 L 206.715 91.799 L 207.377 90.784 L 208.015 89.431 L 208.707 87.063 L 209.108 84.695 L 209.343 80.298 L 209.071 76.577 L 208.703 74.547 L 207.960 72.179 L 207.065 70.488 L 206.602 69.811 L 205.898 69.135 L 204.227 68.068 L 202.874 67.697 Z"/></svg></a><nav aria-label="メインナビゲーション"><a href="./">トップ</a><a href="./support.html">サポート</a><a href="./privacy.html" aria-current="page">プライバシー</a></nav></div></header>
+<main id="main" tabindex="-1">
+<header class="page-heading"><p class="eyebrow">PRIVACY</p><h1>プライバシーポリシー</h1><p class="meta">最終更新日: 2026年11月11日<br>運営: StudentFood 運営事務局</p></header>
+<section class="card">
+    <p>StudentFood 運営事務局（以下「当運営」）は、iOSアプリ「StudentFood」（以下「本アプリ」）における利用者情報の取り扱いについて、以下の通りプライバシーポリシーを定めます。</p>
+  </section>
 
-  <div class="card">
-    <p>StudentFood運営者（以下「当運営」）は、iOSアプリ「StudentFood」（以下「本アプリ」）における利用者情報の取り扱いについて、以下の通りプライバシーポリシーを定めます。</p>
-  </div>
-
-  <div class="card">
+  <section class="card">
     <h2>1. 取得する情報とその目的</h2>
     <p>本アプリは「空きコマ90分。決め手3秒。」のコンセプトに基づき、必要最小限のデータのみを取り扱います。</p>
 
@@ -163,9 +143,9 @@ footer {
     <div class="highlight-box">
       ※ 氏名、大学メールアドレス、Apple ID、学籍番号、広告識別子（IDFA）、正確なGPS座標が分析データに含まれることは一切ありません。
     </div>
-  </div>
+  </section>
 
-  <div class="card">
+  <section class="card">
     <h2>2. 利用者によるデータの管理・削除権利</h2>
     <p>設定画面から、端末内の学生証パスとサーバーの利用分析データをそれぞれ管理できます。各操作の削除対象は以下のとおりです。</p>
     <ul>
@@ -174,17 +154,17 @@ footer {
       <li><strong>同意の変更</strong>: 設定画面のトグルより、いつでも分析データ共有のオン/オフを切り替え可能です。既に送信した分析データの削除は、上記のサーバーデータ削除を別途実行してください。</li>
     </ul>
     <p>端末内のパス削除は、認証基盤やメール配信サービス側の記録を一括削除する操作ではありません。これらについてのお問い合わせは下記窓口へご連絡ください。</p>
-  </div>
+  </section>
 
-  <div class="card">
+  <section class="card">
     <h2>3. 広告トラッキングおよび第三者提供について</h2>
     <ul>
       <li><strong>広告トラッキングを行いません</strong>: 他社のアプリやWebサイトを横断して利用者を追跡する広告識別子（IDFA / ATT）は一切取得・使用しません。</li>
       <li><strong>第三者へのデータ販売・提供の禁止</strong>: 法令に基づく場合を除き、利用者のデータを広告目的や営利目的で第三者へ販売・提供・譲渡することはありません。</li>
     </ul>
-  </div>
+  </section>
 
-  <div class="card">
+  <section class="card">
     <h2>4. 外部サービス</h2>
     <p>本アプリは機能提供のために以下の事業者サービスを利用しています。</p>
     <ul>
@@ -194,22 +174,20 @@ footer {
       <li><strong>Google Apps Script / メール配信</strong>: 大学メールアドレスへの認証コード送信処理</li>
       <li><strong>GitHub Pages</strong>: 本ポリシー・サポートページの配信。GitHubは安全性確保のため、Webページ訪問者のIPアドレスを記録します。</li>
     </ul>
-  </div>
+  </section>
 
-  <div class="card">
+  <section class="card">
     <h2>5. お問い合わせ窓口</h2>
     <p>本ポリシーに関するご質問やデータに関するお問い合わせは、下記窓口までご連絡ください。</p>
     <ul>
       <li><strong>サービス名</strong>: StudentFood</li>
-      <li><strong>運営者</strong>: StudentFood 運営（代表: 三摩 琉）</li>
+      <li><strong>運営者</strong>: StudentFood 運営事務局</li>
       <li><strong>メールアドレス</strong>: <a href="mailto:studentfood3s@gmail.com">studentfood3s@gmail.com</a></li>
       <li><strong>サポートページ</strong>: <a href="./support.html">サポート ＆ よくある質問</a></li>
     </ul>
-  </div>
-
-  <footer>
-    <p>&copy; 2026 StudentFood. All rights reserved.</p>
-  </footer>
-</div>
+  </section>
+<a class="mail-button" href="mailto:studentfood3s@gmail.com">サポート窓口へメールを送る <span aria-hidden="true">↗</span></a>
+</main>
+<footer class="site-footer"><p>&copy; 2026 StudentFood 運営事務局. All rights reserved.</p><p>大学生のための食事決定アプリ</p></footer>
 </body>
 </html>
