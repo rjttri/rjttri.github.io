@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'sha256-vRtKD5JPYoQ32/aIFSMQ+eOf/qhdGcZB9mZrVfBFgmE='; connect-src https://enktzmhqxsnnjdwonmhx.supabase.co; base-uri 'none'; form-action 'none'; object-src 'none'">
 <title>サポート＆よくある質問 | StudentFood</title>
 <meta name="description" content="StudentFoodの使い方、学生証パス、認証メールについてのよくある質問とお問い合わせ窓口です。">
 <style>
@@ -130,6 +130,42 @@ strong { font-weight: 650; }
   .site-footer { width: calc(100% - 40px); }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; } }
+
+/* T095: support reviews, matching the existing neutral support page. */
+button, input, textarea { font: inherit; }
+button { cursor: pointer; }
+button:disabled { opacity: .55; cursor: wait; }
+button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid var(--text); outline-offset: 4px; }
+[hidden] { display: none !important; }
+.reviews-section { margin-top: 40px; }
+.review-muted, .review-help { color: var(--secondary); font-size: 13px; }
+.review-score { margin-bottom: 0; font-size: 40px; font-weight: 700; letter-spacing: -.04em; }
+.review-distribution { max-width: 400px; margin-top: 20px; }
+.review-distribution-row { display: grid; grid-template-columns: 44px minmax(0, 1fr) 24px; align-items: center; gap: 12px; font-size: 12px; color: var(--secondary); }
+.review-distribution-row progress { width: 100%; height: 6px; accent-color: var(--text); }
+.review-form { margin-top: 28px; border-top: .5px solid var(--border); padding-top: 24px; }
+.review-form fieldset { border: 0; padding: 0; margin: 0 0 20px; min-width: 0; }
+.review-form legend, .review-field-label { font-size: 14px; font-weight: 600; }
+.review-stars { display: flex; gap: 4px; margin: 8px 0; }
+.review-star { flex: 0 0 44px; position: relative; display: grid; place-items: center; width: 44px; height: 44px; cursor: pointer; border-radius: 10px; color: var(--secondary); background: var(--surface-subtle); }
+.review-star input { position: absolute; opacity: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
+.review-star span { pointer-events: none; font-size: 26px; line-height: 1; }
+.review-star[data-selected="true"] { color: var(--text); }
+.review-star:has(input:focus-visible) { outline: 2px solid var(--text); outline-offset: 3px; }
+.review-field-label { display: block; margin: 16px 0 6px; }
+.review-form input[type="text"], .review-form textarea { display: block; width: 100%; min-height: 48px; padding: 12px 14px; border-radius: 12px; border: 1px solid var(--border); background: var(--bg); color: var(--text); }
+.review-form textarea { min-height: 120px; resize: vertical; }
+.review-form .mail-button { border: 0; line-height: 1.5; }
+.review-message { min-height: 26px; margin-top: 16px; font-size: 13px; color: var(--secondary); }
+.review-item { padding: 24px 0; border-top: .5px solid var(--border); }
+.review-item-heading { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.review-item-heading p { margin: 0; }
+.review-stars-readonly { letter-spacing: 2px; font-size: 14px; }
+.review-nickname { font-weight: 600; font-size: 13px; }
+.review-item time { margin-left: auto; font-size: 12px; color: var(--secondary); }
+.review-comment { margin-top: 12px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.review-secondary { min-height: 44px; padding: 8px 18px; border: 1px solid var(--border); border-radius: 999px; color: var(--text); background: var(--surface-subtle); }
+@media (max-width: 360px) { .reviews-section { padding-left: 18px; padding-right: 18px; } }
 </style>
 </head>
 <body>
@@ -137,10 +173,34 @@ strong { font-weight: 650; }
 <main id="main" tabindex="-1">
 <header class="page-heading"><p class="eyebrow">SUPPORT</p><h1>サポート＆<br>よくある質問</h1><p class="lead">StudentFood 公式サポート窓口</p></header>
 <section aria-labelledby="faq-heading"><h2 id="faq-heading">よくある質問（FAQ）</h2><div class="faq-list"><article class="card faq-card"><h3 class="faq-q"><span class="q-badge" aria-hidden="true">Q</span><span>アプリの利用に登録や料金は必要ですか？</span></h3><p class="faq-a">いいえ、StudentFood は完全無料でご利用いただけます。通常のおすすめ店舗検索は、会員登録やログインをすることなく、アプリを開いてすぐにお使いいただけます。</p></article>
-<article class="card faq-card"><h3 class="faq-q"><span class="q-badge" aria-hidden="true">Q</span><span>位置情報を使いたくない／許可できない場合は？</span></h3><p class="faq-a">位置情報の利用は必須ではありません。アプリ右上の「設定」から検索地点を「関西外国語大学 中宮キャンパス」や「枚方市駅」に変更することで、現在地を使わずに検索できます。</p></article>
+<article class="card faq-card"><h3 class="faq-q"><span class="q-badge" aria-hidden="true">Q</span><span>位置情報を使いたくない／許可できない場合は？</span></h3><p class="faq-a">位置情報が未許可・取得できない場合でも基準エリア周辺を検索して表示します。現在地から近いお店を探す場合は位置情報の利用を許可してください。</p></article>
 <article class="card faq-card"><h3 class="faq-q"><span class="q-badge" aria-hidden="true">Q</span><span>学生証パスの登録データを消去（アカウント削除）したい</span></h3><p class="faq-a">アプリ右上の「設定」を開き、最上部にある「学生証パスと登録データの削除」をタップしてください。端末内に保存された氏名、大学メールアドレス、会員番号、来店履歴が即座に完全消去されます。</p></article>
 <article class="card faq-card"><h3 class="faq-q"><span class="q-badge" aria-hidden="true">Q</span><span>認証メール（コード）が届きません</span></h3><p class="faq-a">大学のメールアドレス（@kansaigaidai.jp 等）が正しく入力されているかご確認ください。また、迷惑メールフォルダに振り分けられていないかご確認ください。1日の送信上限を超えた場合は、翌日以降に再度お試しください。</p></article>
-<article class="card faq-card"><h3 class="faq-q"><span class="q-badge" aria-hidden="true">Q</span><span>表示されるクーポンは実際にお店で使えますか？</span></h3><p class="faq-a">現在表示されているクーポンは、アプリ内デザインおよび機能テスト用のサンプルです。実際の店舗での割引提供や決済機能は含まれておりません。</p></article></div></section>
+<article class="card faq-card"><h3 class="faq-q"><span class="q-badge" aria-hidden="true">Q</span><span>表示されるクーポンは実際にお店で使えますか？</span></h3><p class="faq-a">対応大学の学生証パス（SFpass）を発行すると、対象店舗の利用条件に従って会計時などに店舗QRを読み取ってご利用いただけます（対応店舗は順次拡大中・アプリ内決済機能なし）。</p></article></div></section>
+<section id="reviews" class="card reviews-section" aria-labelledby="reviews-heading">
+  <span class="section-label">REVIEWS</span><h2 id="reviews-heading">みなさんの感想</h2>
+  <div id="review-summary" role="status" aria-live="polite"><p class="review-muted">レビューを読み込み中です。</p></div>
+  <button id="review-retry" class="review-secondary" type="button" hidden>読み込み直す</button>
+  <form id="review-form" class="review-form" aria-describedby="review-privacy" novalidate>
+    <fieldset><legend>アプリの評価（必須）</legend><div class="review-stars">
+      <label class="review-star" data-selected="false"><input type="radio" name="rating" value="1" required aria-label="5段階中1つ星"><span aria-hidden="true">★</span></label>
+      <label class="review-star" data-selected="false"><input type="radio" name="rating" value="2" required aria-label="5段階中2つ星"><span aria-hidden="true">★</span></label>
+      <label class="review-star" data-selected="false"><input type="radio" name="rating" value="3" required aria-label="5段階中3つ星"><span aria-hidden="true">★</span></label>
+      <label class="review-star" data-selected="false"><input type="radio" name="rating" value="4" required aria-label="5段階中4つ星"><span aria-hidden="true">★</span></label>
+      <label class="review-star" data-selected="false"><input type="radio" name="rating" value="5" required aria-label="5段階中5つ星"><span aria-hidden="true">★</span></label>
+    </div></fieldset>
+    <label class="review-field-label" for="review-nickname">ニックネーム（任意・20文字まで）</label>
+    <input type="text" id="review-nickname" name="nickname" placeholder="空欄の場合は「匿名」" autocomplete="off" aria-describedby="review-privacy">
+    <label class="review-field-label" for="review-comment">感想（任意・300文字まで）</label>
+    <textarea id="review-comment" name="comment" rows="4" placeholder="使ってみてよかったこと、気になったことなど" aria-describedby="review-privacy"></textarea>
+    <p id="review-privacy" class="review-help">星だけでも送信できます。本名・メール・電話番号などの個人情報や、URLは入力しないでください。投稿は運営が確認後に掲載します。<a href="./privacy.html">投稿内容の取り扱い</a></p>
+    <button id="review-submit" class="mail-button" type="submit" disabled>レビューを送信する</button>
+  </form>
+  <p id="review-message" class="review-message" role="status" aria-live="polite"></p>
+  <div id="review-list" aria-label="掲載済みのレビュー"></div>
+  <button id="review-more" class="review-secondary" type="button" hidden>さらに表示</button>
+  <noscript><p class="review-muted">レビューの閲覧・投稿にはJavaScriptが必要です。FAQとメール窓口はそのままご利用いただけます。</p></noscript>
+</section>
 <section class="card contact-section"><span class="section-label">CONTACT</span><h2>お問い合わせ・不具合報告</h2>
     <p>アプリに関するご質問、不具合の報告、ご意見は下記メール窓口までお気軽にお寄せください。</p>
     <p>
@@ -154,5 +214,105 @@ strong { font-weight: 650; }
     </p><a class="mail-button" href="mailto:studentfood3s@gmail.com">サポート窓口へメールを送る <span aria-hidden="true">↗</span></a></section>
 </main>
 <footer class="site-footer"><p>&copy; 2026 StudentFood 運営事務局. All rights reserved.</p><p>大学生のための食事決定アプリ</p></footer>
+<script id="support-reviews-script" type="module">const endpoint = 'https://enktzmhqxsnnjdwonmhx.supabase.co/functions/v1/support-reviews';
+
+export function mountReviews(doc = document, fetcher = fetch) {
+  const section = doc.querySelector('#reviews');
+  if (!section) return;
+  const get = id => section.querySelector('#' + id);
+  const form = get('review-form'), message = get('review-message'), summary = get('review-summary');
+  const list = get('review-list'), more = get('review-more'), retry = get('review-retry');
+  const submit = get('review-submit');
+  submit.disabled = false;
+  let nextOffset = 0, loading = false, submitting = false;
+  const text = (tag, content, className) => {
+    const element = doc.createElement(tag); element.textContent = content;
+    if (className) element.className = className;
+    return element;
+  };
+  async function request(method, body, offset = 0) {
+    const response = await fetcher(endpoint + (method === 'GET' ? '?offset=' + offset : ''), {
+      method, credentials: 'omit', referrerPolicy: 'no-referrer', redirect: 'error', signal: AbortSignal.timeout(8000),
+      ...(body ? {headers: {'Content-Type': 'application/json'}, body: JSON.stringify(body)} : {})
+    });
+    if (!response.ok) throw Error(response.status === 429 ? 'rate_limited' : 'unavailable');
+    return response.json();
+  }
+  function renderSummary(data) {
+    summary.replaceChildren();
+    if (data.total === 0) {
+      summary.append(text('p', 'まだ掲載されたレビューはありません。アプリを使ってみた感想をぜひお寄せください。', 'review-muted'));
+      return;
+    }
+    summary.append(text('p', Number(data.average).toFixed(1) + ' / 5', 'review-score'),
+      text('p', data.total + '件の評価 · 運営が確認した投稿を掲載しています。', 'review-muted'));
+    const distribution = text('div', '', 'review-distribution');
+    for (let star = 5; star >= 1; star--) {
+      const row = text('div', '', 'review-distribution-row'), progress = doc.createElement('progress');
+      progress.max = data.total; progress.value = data.breakdown[star];
+      progress.setAttribute('aria-label', star + 'つ星：' + data.breakdown[star] + '件');
+      row.append(text('span', star + 'つ星'), progress, text('span', String(data.breakdown[star])));
+      distribution.append(row);
+    }
+    summary.append(distribution);
+  }
+  async function load(append = false) {
+    if (loading) return;
+    loading = true; more.disabled = true; retry.hidden = true;
+    try {
+      const data = await request('GET', null, append ? nextOffset : 0);
+      if (!data?.summary || !Number.isSafeInteger(data.summary.total) || data.summary.total < 0 ||
+          !Array.isArray(data.reviews) || !data.summary.breakdown || typeof data.hasMore !== 'boolean' ||
+          !Number.isSafeInteger(data.nextOffset)) throw Error('unavailable');
+      renderSummary(data.summary);
+      if (!append) list.replaceChildren();
+      for (const review of data.reviews) {
+        const item = text('article', '', 'review-item'), heading = text('div', '', 'review-item-heading');
+        heading.append(text('p', '★'.repeat(Math.max(1, Math.min(5, review.rating))), 'review-stars-readonly'),
+          text('p', review.nickname || '匿名', 'review-nickname'));
+        const date = doc.createElement('time');
+        date.dateTime = review.created_at;
+        date.textContent = new Date(review.created_at).toLocaleDateString('ja-JP', {year: 'numeric', month: '2-digit', day: '2-digit'});
+        heading.append(date); item.append(heading);
+        if (review.comment) item.append(text('p', review.comment, 'review-comment'));
+        list.append(item);
+      }
+      nextOffset = data.nextOffset; more.hidden = !data.hasMore;
+    } catch {
+      if (!append) summary.replaceChildren(text('p', 'レビューを読み込めませんでした。時間をおいてお試しください。', 'review-muted'));
+      else message.textContent = '続きを読み込めませんでした。時間をおいてお試しください。';
+      retry.hidden = false;
+    } finally { loading = false; more.disabled = false; }
+  }
+  form.addEventListener('change', () => {
+    const selected = Number(form.elements.rating.value);
+    for (const input of form.querySelectorAll('[name="rating"]')) input.parentElement.dataset.selected = Number(input.value) <= selected ? 'true' : 'false';
+  });
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+    if (submitting || !form.reportValidity()) return;
+    const nickname = form.elements.nickname.value.trim(), comment = form.elements.comment.value.trim();
+    if (Array.from(nickname).length > 20 || Array.from(comment).length > 300) {
+      message.textContent = 'ニックネームは20文字、感想は300文字以内で入力してください。'; return;
+    }
+    submitting = true; submit.disabled = true; submit.textContent = '送信中…'; message.textContent = '';
+    try {
+      const data = await request('POST', {rating: Number(form.elements.rating.value), nickname, comment});
+      if (data.status !== 'pending') throw Error('unavailable');
+      form.reset();
+      for (const label of form.querySelectorAll('.review-star')) label.dataset.selected = 'false';
+      message.textContent = 'ご評価ありがとうございます。内容を確認のうえ掲載します。';
+    } catch (error) {
+      message.textContent = error.message === 'rate_limited' ? '投稿の間隔をあけて、時間をおいてお試しください。' :
+        '送信できませんでした。文字数や、本名・連絡先・URLが含まれていないか確認し、時間をおいてお試しください。';
+    } finally { submitting = false; submit.disabled = false; submit.textContent = 'レビューを送信する'; }
+  });
+  more.addEventListener('click', () => load(true));
+  retry.addEventListener('click', () => load(false));
+  load();
+}
+
+if (typeof document !== 'undefined') mountReviews();
+</script>
 </body>
 </html>
