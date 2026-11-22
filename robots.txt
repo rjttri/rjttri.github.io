@@ -1,0 +1,3 @@
+# Preserve the default crawl behavior: no paths are disallowed.
+User-agent: *
+Disallow:
