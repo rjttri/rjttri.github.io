@@ -144,6 +144,92 @@ p { max-width: 660px; }
 a:hover > .ar, button:hover > .ar { transform: translateX(4px); }
 a:hover > .ar.dn { transform: translateY(4px); }
 
+
+.hero-start {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: clamp(22px, 3vw, 34px);
+  animation: fade .9s var(--e) both;
+}
+.hero-start-text {
+  font-family: var(--min);
+  font-weight: 600;
+  font-size: clamp(28px, 5vw, 52px);
+  line-height: 1.1;
+  letter-spacing: .06em;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+.hero-start-rule {
+  display: block;
+  width: clamp(88px, 14vw, 156px);
+  height: 1px;
+  margin-top: clamp(14px, 2vw, 20px);
+  background: rgba(255, 255, 255, .42);
+}
+.partners-launch {
+  font-size: 14px;
+  color: var(--mute);
+  margin-bottom: 18px;
+}
+.shops-merits {
+  list-style: none;
+  padding: 0;
+  margin: 28px 0 36px;
+  display: grid;
+  gap: 24px;
+  text-align: left;
+}
+.shops-merits li {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 0 18px;
+  align-items: start;
+}
+.shops-merits .ln {
+  grid-column: 1 / -1;
+  margin-bottom: 18px;
+}
+.shops-merits .n {
+  font-family: var(--min);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  color: var(--mute);
+  padding-top: 5px;
+  font-variant-numeric: tabular-nums;
+}
+.shops-merits h3 {
+  font-size: clamp(16.5px, 2vw, 19px);
+  line-height: 1.5;
+  margin-bottom: 6px;
+}
+.shops-merits p {
+  font-size: 14.5px;
+  line-height: 1.85;
+  color: var(--mute);
+}
+.shops-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 28px;
+  align-items: center;
+  justify-content: center;
+}
+.shops-ig {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--navy2);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 2px;
+}
+.shops-ig:hover { border-color: var(--navy2); }
+.ft-links { display: inline-flex; gap: 20px; flex-wrap: wrap; align-items: center; }
+
 /* hero */
 .hero {
   background: var(--navy);
@@ -614,6 +700,10 @@ footer a { border-bottom: 1px solid var(--rule); color: var(--ink); }
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
   .js .rv, .js .ln { opacity: 1 !important; transform: none !important; }
 }
+
+.shops .shops-merits, .shops .shops-merits li, .shops .shops-merits h3, .shops .shops-merits p { text-align: left; }
+.shops .shops-actions { justify-content: center; }
+.shops .shops-actions .mail { margin-top: 0; }
 </style>
 </head>
 <body>
@@ -635,6 +725,7 @@ footer a { border-bottom: 1px solid var(--rule); color: var(--ink); }
 <main id="top" tabindex="-1">
   <section class="hero">
     <div class="w">
+      <div class="hero-start"><span class="hero-start-text">12/10 start</span><span class="hero-start-rule" aria-hidden="true"></span></div>
       <h1><span>今行きたいお店を3秒で</span></h1>
       <p class="sub">その日の気分に合うお店を3つだけ提案します。</p>
       <div class="cta">
@@ -732,6 +823,7 @@ footer a { border-bottom: 1px solid var(--rule); color: var(--ink); }
     <div class="w g2">
       <div><h2 class="rv">対応大学・<br>パートナー店舗</h2></div>
       <div>
+        <p class="partners-launch rv">2026年12月10日（木）関西外大エリアから本格スタート</p>
         <div class="uni rv">
           <i class="ln"></i>
           <h3>関西外国語大学</h3>
@@ -792,10 +884,39 @@ footer a { border-bottom: 1px solid var(--rule); color: var(--ink); }
   <section id="shops" class="gray shops">
     <div class="w g2">
       <div><h2 class="rv">飲食店の<br>みなさまへ。</h2></div>
-      <div class="rv">
-        <p class="shops-lead">掲載や SFpass 特典の導入について、お気軽にご相談ください。</p>
-        <a class="mail" href="mailto:studentfood3s@gmail.com?subject=%E3%80%90StudentFood%E3%80%91%E5%BA%97%E8%88%97%E6%8F%90%E6%90%BA%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87&amp;body=%E5%BA%97%E8%88%97%E5%90%8D%EF%BC%9A%0A%E6%9C%80%E5%AF%84%E3%82%8A%E5%A4%A7%E5%AD%A6%E3%83%BB%E3%82%A8%E3%83%AA%E3%82%A2%EF%BC%9A%0A%E3%81%94%E6%8B%85%E5%BD%93%E8%80%85%E5%90%8D%EF%BC%9A%0A%E3%81%94%E7%9B%B8%E8%AB%87%E5%86%85%E5%AE%B9%EF%BC%9A%0A">提携について相談する<span class="ar" aria-hidden="true">→</span></a>
-        <p class="eml">直接のご連絡：<a href="mailto:studentfood3s@gmail.com">studentfood3s@gmail.com</a></p>
+      <div>
+        <p class="shops-lead rv">12月10日（木）のスタートに向け、初期パートナー店舗を募集しています。大学生と地域の飲食店がともに成長できる仕組みをつくっています。</p>
+        <ol class="shops-merits">
+          <li class="rv">
+            <i class="ln"></i>
+            <span class="n">01</span>
+            <div>
+              <h3>大学生に、埋もれず届く</h3>
+              <p>最大3軒だけの提案と学生専用パス「SFpass」を通じて、大学周辺の学生にお店の魅力をまっすぐ届けます。</p>
+            </div>
+          </li>
+          <li class="rv">
+            <i class="ln"></i>
+            <span class="n">02</span>
+            <div>
+              <h3>専用サイトから、いつでも自由に更新</h3>
+              <p>StudentFood for Business から、特典内容や写真、営業時間、Instagram・公式サイトまでスマホで自由に掲載・変更できます。</p>
+            </div>
+          </li>
+          <li class="rv">
+            <i class="ln"></i>
+            <span class="n">03</span>
+            <div>
+              <h3>集客の動きが数字で見える</h3>
+              <p>直近の特典カードの表示回数や店頭QRの読み取り回数を専用画面で確認でき、特典内容の見直しに活かせます。</p>
+            </div>
+          </li>
+        </ol>
+        <div class="shops-actions rv">
+          <a class="mail" href="mailto:studentfood3s@gmail.com?subject=%E3%80%90StudentFood%E3%80%91%E5%BA%97%E8%88%97%E6%8F%90%E6%90%BA%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87&amp;body=%E5%BA%97%E8%88%97%E5%90%8D%EF%BC%9A%0A%E6%9C%80%E5%AF%84%E3%82%8A%E5%A4%A7%E5%AD%A6%E3%83%BB%E3%82%A8%E3%83%AA%E3%82%A2%EF%BC%9A%0A%E3%81%94%E6%8B%85%E5%BD%93%E8%80%85%E5%90%8D%EF%BC%9A%0A%E3%81%94%E7%9B%B8%E8%AB%87%E5%86%85%E5%AE%B9%EF%BC%9A%0A">提携について相談する<span class="ar" aria-hidden="true">→</span></a>
+          <a class="shops-ig" href="https://www.instagram.com/studentfood.app/" target="_blank" rel="noopener noreferrer">Instagram（@studentfood.app）<span class="ar" aria-hidden="true">↗</span></a>
+        </div>
+        <p class="eml rv">直接のご連絡：<a href="mailto:studentfood3s@gmail.com">studentfood3s@gmail.com</a></p>
       </div>
     </div>
   </section>
@@ -811,7 +932,7 @@ footer a { border-bottom: 1px solid var(--rule); color: var(--ink); }
 <footer>
   <div class="w">
     <span>© 2026 StudentFood 運営事務局</span>
-    <a href="https://apps.apple.com/jp/app/studentfood/id6834447993" target="_blank" rel="noopener noreferrer">App Store でダウンロード</a>
+    <span class="ft-links"><a href="https://www.instagram.com/studentfood.app/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://apps.apple.com/jp/app/studentfood/id6834447993" target="_blank" rel="noopener noreferrer">App Store でダウンロード</a></span>
   </div>
 </footer>
 
